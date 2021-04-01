@@ -16,26 +16,26 @@ const Todos = () => {
     
     return (
         <div>
-        <h3>Hello {displayName}</h3>
-        <h4>Todos</h4>
-        <AddTodo />
-        <ul
-            style={{
-            listStyleType: "none",
-            }}
-        >
-        {todos &&
-          Object.values(todos).map((todo) => (
-            <li>
-              <ToDoItem
-                title={todo.title}
-                isDone={todo.isDone}
-                todoID={todo.todoID}
-                key={todo.todoID}
-              />
-            </li>
-          ))}
-      </ul>
+            <h3>Hello {displayName}</h3>
+            <h4>Todos</h4>
+            <AddTodo />
+            <ul
+                style={{
+                listStyleType: "none",
+                }}
+            >
+                {todos &&
+                Object.values(todos).map((todo) => (
+                <li>
+                    <ToDoItem
+                        title={todo.title}
+                        isDone={todo.isDone}
+                        todoID={todo.todoID}
+                        key={todo.todoID}
+                    />
+                </li>
+                ))}
+        </ul>
     </div>
   );
 };
