@@ -8,7 +8,7 @@ const AddTodo = () => {
     const { uid } = useSelector((state) => state.firebase.auth);
     
     const handleChange = ({ currentTarget: { name, value } }) => {
-        if(name === "addToDo") {
+        if(name === "addTodo") {
             setPresentTodo(value);
         }
     };
@@ -23,7 +23,7 @@ const AddTodo = () => {
                 isDone: false,
             })
             .then((docRef) => {
-                docRefupdate({
+                docRef.update({
                     todoId: docRef.id,
                 });
             });
@@ -37,7 +37,7 @@ const AddTodo = () => {
                     type="text"
                     name="addTodo"
                     value={presentTodo}
-                    onChange={handleChange} 
+                    onChange={(e) => handleChange(e)} 
                 />
                 <button
                     onClick={(e) => {
