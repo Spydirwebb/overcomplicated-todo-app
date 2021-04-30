@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect } from "react-redux-firebase";
+//import { v4 as uuidv4 } from "uuid";
 
 import ToDoItem from "../Components/TodoItem";
 import AddTodo from "../Components/AddTodo";
@@ -26,12 +27,12 @@ const Todos = () => {
             >
                 {todos &&
                 Object.values(todos).map((todo) => (
-                <li>
+                <li key={todo.todoId}>
                     <ToDoItem
                         title={todo.title}
                         isDone={todo.isDone}
-                        todoID={todo.todoID}
-                        key={todo.todoID}
+                        todoID={todo.todoId}
+                        key={todo.todoId}
                     />
                 </li>
                 ))}
